@@ -1164,4 +1164,16 @@ button:hover {
   }
 }
 
+.business-logo {
+  width: 180px;
+  height: 65px;
+  object-fit: contain;
+  display: block;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
   
