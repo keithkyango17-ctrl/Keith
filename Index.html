@@ -3,146 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K2 Phone World & Accessories | Premium Tech Essentials</title>
+    <title>K2 Phone World | All Your Phone Needs In One Place!</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://tailwindcss.com"></script>
     <!-- Lucide Icons Library -->
     <script src="https://unpkg.com"></script>
-    <!-- Custom Style Sheet Links -->
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://googleapis.com');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(29, 78, 216, 0.15) 0%, rgba(3, 7, 18, 0) 100%);
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-900 scroll-smooth">
+<body class="text-slate-100 scroll-smooth">
 
-    <!-- Top Promo Banner -->
-    <div class="bg-indigo-600 text-white text-center py-2 text-xs font-semibold tracking-wide">
-        🔥 PREMIUM SMARTPHONE COVERS & CHARGERS AVAILABLE NOW IN KAMPALA!
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 text-center py-2 text-xs font-bold tracking-wide shadow-md">
+        ✨ UPGRADE YOUR WORLD! VISIT US TODAY AT KAMPALA ROAD ✨
     </div>
 
     <!-- Navigation Header Bar -->
-    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <header class="sticky top-0 z-40 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo Group -->
-            <div class="flex items-center gap-2">
-                <div class="bg-indigo-600 p-2.5 rounded-xl text-white shadow-md shadow-indigo-200">
-                    <i data-lucide="smartphone" class="w-6 h-6"></i>
+            
+            <div class="flex items-center gap-3">
+                <div class="bg-gradient-to-br from-amber-400 to-yellow-500 p-2.5 rounded-xl text-slate-950 font-black text-2xl tracking-tighter shadow-lg shadow-amber-500/10">
+                    K2
                 </div>
                 <div>
-                    <span class="text-xl font-bold tracking-tight text-slate-900 block leading-none">K2 PHONE WORLD</span>
-                    <span class="text-[10px] text-indigo-600 font-bold uppercase tracking-widest">& Accessories</span>
+                    <span class="text-xl font-extrabold tracking-tight text-white block leading-none">PHONE WORLD</span>
+                    <span class="text-[10px] text-amber-400 font-bold uppercase tracking-widest block mt-1">Your Phone, Our Passion</span>
                 </div>
             </div>
 
-            <!-- Desktop Links -->
-            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
-                <a href="#hero" class="hover:text-indigo-600 transition">Home</a>
-                <a href="#shop" class="hover:text-indigo-600 transition">Shop Catalogue</a>
-                <a href="#features" class="hover:text-indigo-600 transition">Why Choose K2</a>
-                <a href="#contact" class="hover:text-indigo-600 transition">Contact Us</a>
+            <!-- Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 font-semibold text-slate-300">
+                <a href="#hero" class="hover:text-amber-400 transition">Home</a>
+                <a href="#categories" class="hover:text-amber-400 transition">Our Offerings</a>
+                <a href="#shop" class="hover:text-amber-400 transition">Catalog</a>
+                <a href="#contact" class="hover:text-amber-400 transition">Contact Us</a>
             </nav>
 
             <!-- Cart Trigger Button -->
             <div class="flex items-center gap-4">
-                <button onclick="toggleCart()" class="relative p-2.5 hover:bg-slate-100 rounded-full transition text-slate-700 cursor-pointer">
+                <button onclick="toggleCart()" class="relative p-2.5 bg-slate-900 border border-slate-800 hover:bg-slate-800 rounded-xl transition text-amber-400 cursor-pointer">
                     <i data-lucide="shopping-bag" class="w-5 h-5"></i>
-                    <span id="cart-count" class="absolute top-1 right-1 bg-indigo-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    <span id="cart-count" class="absolute -top-1.5 -right-1.5 bg-amber-500 text-slate-950 text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-slate-950">0</span>
                 </button>
             </div>
         </div>
     </header>
 
     <!-- Showcase Hero Area -->
-    <section id="hero" class="relative overflow-hidden bg-slate-900 text-white py-20 lg:py-28">
-        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section id="hero" class="relative overflow-hidden hero-gradient py-20 lg:py-32 border-b border-slate-900">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-                <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-medium bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 mb-6">
-                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span> Your Trusted Local Retailer
+                <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20 mb-6">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span> BEST QUALITY • BEST PRICES
                 </span>
-                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-                    Dress Your Phone In <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">Style & Power</span>
+                <h1 class="text-5xl sm:text-7xl font-black tracking-tight text-white mb-6 uppercase leading-none">
+                    ALL YOUR PHONE NEEDS <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-200">IN ONE PLACE!</span>
                 </h1>
-                <p class="text-lg text-slate-300 mb-8 max-w-xl">
-                    High-durability protective cases, super-fast smart chargers, and trendsetting gadgets crafted to fit Apple, Samsung, Xiaomi, and other top brands flawlessly.
+                <p class="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
+                    Premium devices, shockproof protective covers, high-clarity screen shields, and high-fidelity audio gear configured directly at Kampala Road.
                 </p>
+                
+                <!-- Quick Location Card -->
+                <div class="flex items-center gap-4 bg-slate-900/60 border border-slate-800 rounded-2xl p-4 mb-8 max-w-md backdrop-blur-sm">
+                    <div class="bg-amber-500/10 p-3 rounded-xl text-amber-400">
+                        <i data-lucide="map-pin" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-slate-500">Find Us Locally</h4>
+                        <p class="text-white font-extrabold text-lg">Located at Kampala Road</p>
+                    </div>
+                </div>
+
                 <div class="flex flex-wrap gap-4">
-                    <a href="#shop" class="bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-3.5 rounded-xl font-semibold shadow-lg shadow-indigo-600/30 transition flex items-center gap-2">
-                        Explore Collection <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                    <a href="#contact" class="bg-white/10 hover:bg-white/20 text-white border border-white/10 px-8 py-3.5 rounded-xl font-semibold transition">
-                        Find Our Shop
+                    <a href="#shop" class="bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 px-8 py-4 rounded-xl font-bold shadow-lg shadow-amber-500/20 hover:scale-[1.02] transition flex items-center gap-2">
+                        View Product Catalog <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </div>
             </div>
             
-            <!-- Hero Grid Previews -->
+            <!-- Hero Grid Previews matching poster slots -->
             <div class="grid grid-cols-2 gap-4">
                 <div class="space-y-4">
-                    <div class="bg-white/5 backdrop-blur border border-white/10 p-4 rounded-2xl">
-                        <img src="https://unsplash.com" alt="Covers" class="rounded-xl w-full h-40 object-cover mb-3">
-                        <h3 class="font-bold text-sm">Shockproof Protective Covers</h3>
+                    <div class="bg-slate-900/40 border border-slate-800/80 p-4 rounded-2xl hover:border-amber-500/30 transition">
+                        <img src="https://unsplash.com" alt="Phones" class="rounded-xl w-full h-40 object-cover mb-3">
+                        <h3 class="font-bold text-white text-sm">Latest Smartphone Models</h3>
                     </div>
-                    <div class="bg-white/5 backdrop-blur border border-white/10 p-4 rounded-2xl">
-                        <img src="https://unsplash.com" alt="Chargers" class="rounded-xl w-full h-40 object-cover mb-3">
-                        <h3 class="font-bold text-sm">High-Speed Power Bricks</h3>
+                    <div class="bg-slate-900/40 border border-slate-800/80 p-4 rounded-2xl hover:border-amber-500/30 transition">
+                        <img src="https://unsplash.com" alt="Covers" class="rounded-xl w-full h-40 object-cover mb-3">
+                        <h3 class="font-bold text-white text-sm">Premium Protective Covers</h3>
                     </div>
                 </div>
                 <div class="space-y-4 pt-8">
-                    <div class="bg-white/5 backdrop-blur border border-white/10 p-4 rounded-2xl">
-                        <img src="https://unsplash.com" alt="Audio" class="rounded-xl w-full h-40 object-cover mb-3">
-                        <h3 class="font-bold text-sm">Wireless Earbuds</h3>
+                    <div class="bg-slate-900/40 border border-slate-800/80 p-4 rounded-2xl hover:border-amber-500/30 transition">
+                        <img src="https://unsplash.com" alt="Guards" class="rounded-xl w-full h-40 object-cover mb-3">
+                        <h3 class="font-bold text-white text-sm">HD Clarity Screen Guards</h3>
                     </div>
-                    <div class="bg-white/5 backdrop-blur border border-white/10 p-4 rounded-2xl">
-                        <img src="https://unsplash.com" alt="Speakers" class="rounded-xl w-full h-40 object-cover mb-3">
-                        <h3 class="font-bold text-sm">Bluetooth Speakers</h3>
+                    <div class="bg-white/5 border border-white/10 p-4 rounded-2xl hover:border-amber-500/30 transition">
+                        <img src="https://unsplash.com" alt="Accessories" class="rounded-xl w-full h-40 object-cover mb-3">
+                        <h3 class="font-bold text-white text-sm">Earpods & Premium Gear</h3>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Shop Dynamic Interface -->
-    <section id="shop" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+    <!-- Core Categories Row -->
+    <section id="categories" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 rounded-2xl text-center">
+                <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center mx-auto mb-4"><i data-lucide="smartphone"></i></div>
+                <h3 class="font-black text-lg tracking-wide uppercase mb-1">PHONES</h3>
+                <p class="text-xs text-slate-400">Latest Models • Best Deals</p>
+            </div>
+            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 rounded-2xl text-center">
+                <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center mx-auto mb-4"><i data-lucide="shield"></i></div>
+                <h3 class="font-black text-lg tracking-wide uppercase mb-1">PHONE COVERS</h3>
+                <p class="text-xs text-slate-400">Style • Protection • Variety</p>
+            </div>
+            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 rounded-2xl text-center">
+                <div class="w-12 h-12 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center mx-auto mb-4"><i data-lucide="layers"></i></div>
+                <h3 class="font-black text-lg tracking-wide uppercase mb-1">SCREEN GUARDS</h3>
+                <p class="text-xs text-slate-400">HD Clarity • Scratch Protection</p>
+            </div>
+            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 rounded-2xl text-center">
+                <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center mx-auto mb-4"><i data-lucide="headphones"></i></div>
+                <h3 class="font-black text-lg tracking-wide uppercase mb-1">EARPODS & GEAR</h3>
+                <p class="text-xs text-slate-400">Clear Sound • Premium Quality</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketplace Catalogue Interface with Search Engine Integration -->
+    <section id="shop" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
             <div>
-                <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl mb-3">Explore Accessories</h2>
-                <p class="text-slate-600">Premium choices cataloged perfectly for all mainstream devices.</p>
-            </div>
-            
-            <!-- Dynamic Filter Pill Row -->
-            <div class="flex flex-wrap gap-2">
-                <button onclick="filterCategory('all')" id="btn-all" class="cat-btn px-5 py-2.5 rounded-xl font-medium text-sm transition bg-indigo-600 text-white shadow-sm cursor-pointer">All Products</button>
-                <button onclick="filterCategory('covers')" id="btn-covers" class="cat-btn px-5 py-2.5 rounded-xl font-medium text-sm transition bg-white text-slate-600 hover:bg-slate-100 border border-slate-200/60 cursor-pointer">Covers</button>
-                <button onclick="filterCategory('chargers')" id="btn-chargers" class="cat-btn px-5 py-2.5 rounded-xl font-medium text-sm transition bg-white text-slate-600 hover:bg-slate-100 border border-slate-200/60 cursor-pointer">Chargers</button>
-                <button onclick="filterCategory('accessories')" id="btn-accessories" class="cat-btn px-5 py-2.5 rounded-xl font-medium text-sm transition bg-white text-slate-600 hover:bg-slate-100 border border-slate-200/60 cursor-pointer">Other Accessories</button>
-            </div>
-        </div>
-
-        <!-- Target Injection Node for JavaScript Generator Grid -->
-        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Rendered by JavaScript dynamically -->
-        </div>
-    </section>
-
-    <!-- Why Choose K2 Feature Pillars -->
-    <section id="features" class="bg-indigo-950 text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl">
-                    <div class="bg-indigo-500/20 p-3 rounded-xl text-indigo-400 w-fit mb-5">
-                        <i data-lucide="shield-check" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Verified Authenticity</h3>
-                    <p class="text-indigo-200/80 text-sm leading-relaxed">No generic copy counterfeits. We hand-test case fittings and voltage safety standard parameters strictly.</p>
-                </div>
-                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl">
-                    <div class="bg-indigo-500/20 p-3 rounded-xl text-indigo-400 w-fit mb-5">
-                        <i data-lucide="zap" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Modern Charging Labs</h3>
-                    <p class="text-indigo-200/80 text-sm leading-relaxed">GaN core architectures that power up your phone device while carefully managing safe device temperatures.</p>
-                </div>
-                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl">
-                    <div class="bg-indigo-500/20 p-3 rounded-xl text-indigo-400 w-fit mb-5">
-                        <i data-lucide="truck" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Fast Kampala Delivery</h3>
