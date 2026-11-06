@@ -1,149 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K2 Phone World | All Your Phone Needs In One Place!</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://tailwindcss.com"></script>
-    <!-- Lucide Icons Library -->
-    <script src="https://unpkg.com"></script>
-    <style>
-        @import url('https://googleapis.com');
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #030712;
-        }
-        .hero-gradient {
-            background: radial-gradient(circle at 50% 50%, rgba(29, 78, 216, 0.15) 0%, rgba(3, 7, 18, 0) 100%);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K2 Phone World | Phones & Accessories</title>
+  <meta name="description" content="Shop smartphones and phone accessories at K2 Phone World.">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="text-slate-100 scroll-smooth">
 
-    <!-- Top Announcement Bar -->
-    <div class="bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 text-center py-2 text-xs font-bold tracking-wide shadow-md">
-        ✨ UPGRADE YOUR WORLD! VISIT US TODAY AT KAMPALA ROAD ✨
+<body>
+
+<header class="topbar">
+  <div class="logo">
+    <span>K2</span>
+    <div>
+      <h2>PHONE WORLD</h2>
+      <small>Your Phone, Our Passion</small>
+    </div>
+  </div>
+
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  <nav id="navigation">
+    <a href="#home">Home</a>
+    <a href="#phones">Phones</a>
+    <a href="#accessories">Accessories</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <button onclick="showAdminLogin()">Admin</button>
+  </nav>
+</header>
+
+<main id="home">
+
+  <section class="hero">
+    <p class="tagline">WELCOME TO K2 PHONE WORLD</p>
+    <h1>ALL YOUR PHONE NEEDS IN ONE PLACE!</h1>
+    <p>
+      Discover quality smartphones, phone covers,
+      screen protectors and accessories at great prices.
+    </p>
+    <a href="#phones" class="main-btn">Explore Products</a>
+  </section>
+
+  <section class="section" id="phones">
+    <h2>Our Phones</h2>
+    <div id="phoneProducts" class="product-grid">
+      <p>Loading phones...</p>
+    </div>
+  </section>
+
+  <section class="section" id="accessories">
+    <h2>Phone Accessories</h2>
+    <div id="accessoryProducts" class="product-grid">
+      <p>Loading accessories...</p>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <h2>Our Photos & Videos</h2>
+    <div id="mediaGallery" class="product-grid">
+      <p>Loading gallery...</p>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About K2 Phone World</h2>
+    <p>
+      K2 Phone World is committed to providing quality
+      smartphones and accessories at affordable prices.
+      Your satisfaction is our priority.
+    </p>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <p>WhatsApp: 0774579357</p>
+    <p>Location: Kampala Road, Uganda</p>
+    <a class="main-btn"
+       href="https://wa.me/256774579357">
+       Chat With Us on WhatsApp
+    </a>
+  </section>
+
+</main>
+
+<!-- ADMIN LOGIN -->
+<section id="adminLogin" class="admin-section" style="display:none">
+  <div class="admin-box">
+    <button onclick="closeAdmin()" class="close-btn">✕</button>
+    <h2>Admin Login</h2>
+    <p>Authorized access only</p>
+
+    <form id="adminLoginForm">
+      <input id="adminEmail" type="email"
+             placeholder="Admin email" required>
+
+      <input id="adminPassword" type="password"
+             placeholder="Password" required>
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</section>
+
+<!-- ADMIN DASHBOARD -->
+<section id="adminDashboard" class="admin-section" style="display:none">
+
+  <div class="admin-box dashboard-box">
+    <h2>K2 Admin Dashboard</h2>
+
+    <button onclick="showAdminTab('addProduct')">
+      Add Product
+    </button>
+
+    <button onclick="showAdminTab('manageProducts')">
+      Manage Products
+    </button>
+
+    <button onclick="showAdminTab('mediaUpload')">
+      Upload Photos & Videos
+    </button>
+
+    <button onclick="showAdminTab('businessSettings')">
+      Business Settings
+    </button>
+
+    <button onclick="adminLogout()">
+      Logout
+    </button>
+
+    <div id="addProduct" class="admin-tab">
+      <h3>Add New Product</h3>
+
+      <form id="productForm">
+        <input id="productTitle" placeholder="Product name" required>
+
+        <select id="productCategory" required>
+          <option value="phone">Phone</option>
+          <option value="accessory">Accessory</option>
+        </select>
+
+        <input id="productPrice" type="number"
+               placeholder="Price in UGX" required>
+
+        <textarea id="productDescription"
+                  placeholder="Product description"></textarea>
+
+        <input id="productImage" type="file"
+               accept="image/*" required>
+
+        <button type="submit">Save Product</button>
+      </form>
     </div>
 
-    <!-- Navigation Header Bar -->
-    <header class="sticky top-0 z-40 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            
-            <div class="flex items-center gap-3">
-                <div class="bg-gradient-to-br from-amber-400 to-yellow-500 p-2.5 rounded-xl text-slate-950 font-black text-2xl tracking-tighter shadow-lg shadow-amber-500/10">
-                    K2
-                </div>
-                <div>
-                    <span class="text-xl font-extrabold tracking-tight text-white block leading-none">PHONE WORLD</span>
-                    <span class="text-[10px] text-amber-400 font-bold uppercase tracking-widest block mt-1">Your Phone, Our Passion</span>
-                </div>
-            </div>
+    <div id="manageProducts" class="admin-tab" style="display:none">
+      <h3>Manage Products</h3>
+      <div id="adminProductList"></div>
+    </div>
 
-            <!-- Nav Links -->
-            <nav class="hidden md:flex items-center gap-8 font-semibold text-slate-300">
-                <a href="#hero" class="hover:text-amber-400 transition">Home</a>
-                <a href="#categories" class="hover:text-amber-400 transition">Our Offerings</a>
-                <a href="#shop" class="hover:text-amber-400 transition">Catalog</a>
-                <a href="#contact" class="hover:text-amber-400 transition">Contact Us</a>
-            </nav>
+    <div id="mediaUpload" class="admin-tab" style="display:none">
+      <h3>Upload Photos & Videos</h3>
 
-            <!-- Cart Trigger Button -->
-            <div class="flex items-center gap-4">
-                <button onclick="toggleCart()" class="relative p-2.5 bg-slate-900 border border-slate-800 hover:bg-slate-800 rounded-xl transition text-amber-400 cursor-pointer">
-                    <i data-lucide="shopping-bag" class="w-5 h-5"></i>
-                    <span id="cart-count" class="absolute -top-1.5 -right-1.5 bg-amber-500 text-slate-950 text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-slate-950">0</span>
-                </button>
-            </div>
-        </div>
-    </header>
+      <form id="mediaForm">
+        <input id="mediaTitle" placeholder="Media title">
+        <input id="mediaFile" type="file"
+               accept="image/*,video/*" required>
+        <button type="submit">Upload Media</button>
+      </form>
+    </div>
 
-    <!-- Showcase Hero Area -->
-    <section id="hero" class="relative overflow-hidden hero-gradient py-20 lg:py-32 border-b border-slate-900">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:24px_24px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-                <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20 mb-6">
-                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span> BEST QUALITY • BEST PRICES
-                </span>
-                <h1 class="text-5xl sm:text-7xl font-black tracking-tight text-white mb-6 uppercase leading-none">
-                    ALL YOUR PHONE NEEDS <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-200">IN ONE PLACE!</span>
-                </h1>
-                <p class="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
-                    Premium devices, shockproof protective covers, high-clarity screen shields, and high-fidelity audio gear configured directly at Kampala Road.
-                </p>
-                
-                <!-- Quick Location Card -->
-                <div class="flex items-center gap-4 bg-slate-900/60 border border-slate-800 rounded-2xl p-4 mb-8 max-w-md backdrop-blur-sm">
-                    <div class="bg-amber-500/10 p-3 rounded-xl text-amber-400">
-                        <i data-lucide="map-pin" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h4 class="text-xs font-bold uppercase tracking-widest text-slate-500">Find Us Locally</h4>
-                        <p class="text-white font-extrabold text-lg">Located at Kampala Road</p>
-                    </div>
-                </div>
+    <div id="businessSettings" class="admin-tab" style="display:none">
+      <h3>Business Settings</h3>
 
-                <div class="flex flex-wrap gap-4">
-                    <a href="#shop" class="bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 px-8 py-4 rounded-xl font-bold shadow-lg shadow-amber-500/20 hover:scale-[1.02] transition flex items-center gap-2">
-                        View Product Catalog <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Hero Grid Previews matching poster slots -->
-            <div class="grid grid-cols-2 gap-4">
-                <div class="space-y-4">
-                    <div class="bg-slate-900/40 border border-slate-800/80 p-4 rounded-2xl hover:border-amber-500/30 transition">
-                        <img src="https://unsplash.com" alt="Phones" class="rounded-xl w-full h-40 object-cover mb-3">
-                        <h3 class="font-bold text-white text-sm">Latest Smartphone Models</h3>
-                    </div>
-                    <div class="bg-slate-900/40 border border-slate-800/80 p-4 rounded-2xl hover:border-amber-500/30 transition">
-                        <img src="https://unsplash.com" alt="Covers" class="rounded-xl w-full h-40 object-cover mb-3">
-                        <h3 class="font-bold text-white text-sm">Premium Protective Covers</h3>
-                    </div>
-                </div>
-                <div class="space-y-4 pt-8">
-                    <div class="bg-slate-900/40 border border-slate-800/80 p-4 rounded-2xl hover:border-amber-500/30 transition">
-                        <img src="https://unsplash.com" alt="Guards" class="rounded-xl w-full h-40 object-cover mb-3">
-                        <h3 class="font-bold text-white text-sm">HD Clarity Screen Guards</h3>
-                    </div>
-                    <div class="bg-white/5 border border-white/10 p-4 rounded-2xl hover:border-amber-500/30 transition">
-                        <img src="https://unsplash.com" alt="Accessories" class="rounded-xl w-full h-40 object-cover mb-3">
-                        <h3 class="font-bold text-white text-sm">Earpods & Premium Gear</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <form id="settingsForm">
+        <input id="businessName" placeholder="Business name">
+        <input id="businessPhone" placeholder="Phone number">
+        <input id="businessAddress" placeholder="Business location">
+        <input id="businessWhatsApp" placeholder="WhatsApp number"
+               value="0774579357">
+        <button type="submit">Save Settings</button>
+      </form>
+    </div>
 
-    <!-- Core Categories Row -->
-    <section id="categories" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 rounded-2xl text-center">
-                <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center mx-auto mb-4"><i data-lucide="smartphone"></i></div>
-                <h3 class="font-black text-lg tracking-wide uppercase mb-1">PHONES</h3>
-                <p class="text-xs text-slate-400">Latest Models • Best Deals</p>
-            </div>
-            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 rounded-2xl text-center">
-                <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center mx-auto mb-4"><i data-lucide="shield"></i></div>
-                <h3 class="font-black text-lg tracking-wide uppercase mb-1">PHONE COVERS</h3>
-                <p class="text-xs text-slate-400">Style • Protection • Variety</p>
-            </div>
-            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 rounded-2xl text-center">
-                <div class="w-12 h-12 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center mx-auto mb-4"><i data-lucide="layers"></i></div>
-                <h3 class="font-black text-lg tracking-wide uppercase mb-1">SCREEN GUARDS</h3>
-                <p class="text-xs text-slate-400">HD Clarity • Scratch Protection</p>
-            </div>
-            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-6 rounded-2xl text-center">
-                <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center mx-auto mb-4"><i data-lucide="headphones"></i></div>
-                <h3 class="font-black text-lg tracking-wide uppercase mb-1">EARPODS & GEAR</h3>
-                <p class="text-xs text-slate-400">Clear Sound • Premium Quality</p>
-            </div>
-        </div>
-    </section>
+  </div>
+</section>
 
-    <!-- Marketplace Catalogue Interface with Search Engine Integration -->
-    <section id="shop" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
-            <div>
+<footer>
+  <h3>K2 PHONE WORLD</h3>
+  <p>All Your Phone Needs In One Place!</p>
+  <p>© 2026 K2 Phone World. All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
