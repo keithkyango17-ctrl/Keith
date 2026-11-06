@@ -3,29 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K2 Phone World & Accessories | Premium Tech Gear</title>
-    <!-- Tailwind CSS for modern, sleek utility styling -->
+    <title>K2 Phone World & Accessories | Premium Tech Essentials</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://tailwindcss.com"></script>
-    <!-- Lucide Icons for clean UI iconography -->
+    <!-- Lucide Icons Library -->
     <script src="https://unpkg.com"></script>
-    <style>
-        @import url('https://googleapis.com');
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-    </style>
+    <!-- Custom Style Sheet Links -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-slate-50 text-slate-900 scroll-smooth">
 
-    <!-- Top Announcement Bar -->
+    <!-- Top Promo Banner -->
     <div class="bg-indigo-600 text-white text-center py-2 text-xs font-semibold tracking-wide">
-        🔥 MASSIVE DEALS ON ALL PHONE COVERS & CHARGERS THIS WEEK!
+        🔥 PREMIUM SMARTPHONE COVERS & CHARGERS AVAILABLE NOW IN KAMPALA!
     </div>
 
-    <!-- Navigation Header -->
+    <!-- Navigation Header Bar -->
     <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
+            <!-- Brand Logo Group -->
             <div class="flex items-center gap-2">
                 <div class="bg-indigo-600 p-2.5 rounded-xl text-white shadow-md shadow-indigo-200">
                     <i data-lucide="smartphone" class="w-6 h-6"></i>
@@ -36,17 +32,17 @@
                 </div>
             </div>
 
-            <!-- Desktop Nav Items -->
+            <!-- Desktop Links -->
             <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
                 <a href="#hero" class="hover:text-indigo-600 transition">Home</a>
                 <a href="#shop" class="hover:text-indigo-600 transition">Shop Catalogue</a>
-                <a href="#features" class="hover:text-indigo-600 transition">Why K2</a>
+                <a href="#features" class="hover:text-indigo-600 transition">Why Choose K2</a>
                 <a href="#contact" class="hover:text-indigo-600 transition">Contact Us</a>
             </nav>
 
-            <!-- Action Controls -->
+            <!-- Cart Trigger Button -->
             <div class="flex items-center gap-4">
-                <button onclick="toggleCart()" class="relative p-2.5 hover:bg-slate-100 rounded-full transition text-slate-700">
+                <button onclick="toggleCart()" class="relative p-2.5 hover:bg-slate-100 rounded-full transition text-slate-700 cursor-pointer">
                     <i data-lucide="shopping-bag" class="w-5 h-5"></i>
                     <span id="cart-count" class="absolute top-1 right-1 bg-indigo-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
                 </button>
@@ -54,39 +50,40 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="relative overflow-hidden bg-slate-900 text-white py-24 sm:py-32">
+    <!-- Showcase Hero Area -->
+    <section id="hero" class="relative overflow-hidden bg-slate-900 text-white py-20 lg:py-28">
         <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:16px_16px]"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-                <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-medium bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-6">
-                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span> Your One-Stop Digital Hub
+                <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-xs font-medium bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 mb-6">
+                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span> Your Trusted Local Retailer
                 </span>
                 <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-                    Upgrade Your Phone's <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">Armor & Power</span>
+                    Dress Your Phone In <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">Style & Power</span>
                 </h1>
                 <p class="text-lg text-slate-300 mb-8 max-w-xl">
-                    Premium protective covers, lightning-fast smart chargers, and trendsetting accessories designed to match every top brand layout seamlessly.
+                    High-durability protective cases, super-fast smart chargers, and trendsetting gadgets crafted to fit Apple, Samsung, Xiaomi, and other top brands flawlessly.
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <a href="#shop" class="bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-3.5 rounded-xl font-semibold shadow-lg shadow-indigo-600/30 transition flex items-center gap-2">
                         Explore Collection <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                     <a href="#contact" class="bg-white/10 hover:bg-white/20 text-white border border-white/10 px-8 py-3.5 rounded-xl font-semibold transition">
-                        Find Our Store
+                        Find Our Shop
                     </a>
                 </div>
             </div>
-            <!-- Interactive Highlight Slider Cards -->
+            
+            <!-- Hero Grid Previews -->
             <div class="grid grid-cols-2 gap-4">
                 <div class="space-y-4">
                     <div class="bg-white/5 backdrop-blur border border-white/10 p-4 rounded-2xl">
                         <img src="https://unsplash.com" alt="Covers" class="rounded-xl w-full h-40 object-cover mb-3">
-                        <h3 class="font-bold text-sm">Shockproof Matte Shells</h3>
+                        <h3 class="font-bold text-sm">Shockproof Protective Covers</h3>
                     </div>
                     <div class="bg-white/5 backdrop-blur border border-white/10 p-4 rounded-2xl">
                         <img src="https://unsplash.com" alt="Chargers" class="rounded-xl w-full h-40 object-cover mb-3">
-                        <h3 class="font-bold text-sm">65W GaN Chargers</h3>
+                        <h3 class="font-bold text-sm">High-Speed Power Bricks</h3>
                     </div>
                 </div>
                 <div class="space-y-4 pt-8">
@@ -95,54 +92,57 @@
                         <h3 class="font-bold text-sm">Wireless Earbuds</h3>
                     </div>
                     <div class="bg-white/5 backdrop-blur border border-white/10 p-4 rounded-2xl">
-                        <img src="https://unsplash.com" alt="Premium Accessories" class="rounded-xl w-full h-40 object-cover mb-3">
-                        <h3 class="font-bold text-sm">Gimbal Stabilizers</h3>
+                        <img src="https://unsplash.com" alt="Speakers" class="rounded-xl w-full h-40 object-cover mb-3">
+                        <h3 class="font-bold text-sm">Bluetooth Speakers</h3>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Main Live Shop Catalog section -->
+    <!-- Shop Dynamic Interface -->
     <section id="shop" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="text-center max-w-3xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl mb-4">Our Hardware Catalog</h2>
-            <p class="text-slate-600">Filter through premium accessories perfectly tailored for Apple, Samsung, Xiaomi, Huawei, and other globally renowned smartphone brands.</p>
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+                <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl mb-3">Explore Accessories</h2>
+                <p class="text-slate-600">Premium choices cataloged perfectly for all mainstream devices.</p>
+            </div>
+            
+            <!-- Dynamic Filter Pill Row -->
+            <div class="flex flex-wrap gap-2">
+                <button onclick="filterCategory('all')" id="btn-all" class="cat-btn px-5 py-2.5 rounded-xl font-medium text-sm transition bg-indigo-600 text-white shadow-sm cursor-pointer">All Products</button>
+                <button onclick="filterCategory('covers')" id="btn-covers" class="cat-btn px-5 py-2.5 rounded-xl font-medium text-sm transition bg-white text-slate-600 hover:bg-slate-100 border border-slate-200/60 cursor-pointer">Covers</button>
+                <button onclick="filterCategory('chargers')" id="btn-chargers" class="cat-btn px-5 py-2.5 rounded-xl font-medium text-sm transition bg-white text-slate-600 hover:bg-slate-100 border border-slate-200/60 cursor-pointer">Chargers</button>
+                <button onclick="filterCategory('accessories')" id="btn-accessories" class="cat-btn px-5 py-2.5 rounded-xl font-medium text-sm transition bg-white text-slate-600 hover:bg-slate-100 border border-slate-200/60 cursor-pointer">Other Accessories</button>
+            </div>
         </div>
 
-        <!-- Filter Component Segment -->
-        <div class="flex flex-wrap justify-center gap-2 mb-10">
-            <button onclick="filterCategory('all')" id="btn-all" class="cat-btn px-5 py-2.5 rounded-xl font-medium text-sm transition bg-indigo-600 text-white shadow-sm">All Essentials</button>
-            <button onclick="filterCategory('covers')" id="btn-covers" class="cat-btn px-5 py-2.5 rounded-xl font-medium text-sm transition bg-white text-slate-600 hover:bg-slate-100 border border-slate-200/60">Phone Covers</button>
-            <button onclick="filterCategory('chargers')" id="btn-chargers" class="cat-btn px-5 py-2.5 rounded-xl font-medium text-sm transition bg-white text-slate-600 hover:bg-slate-100 border border-slate-200/60">Fast Chargers</button>
-            <button onclick="filterCategory('accessories')" id="btn-accessories" class="cat-btn px-5 py-2.5 rounded-xl font-medium text-sm transition bg-white text-slate-600 hover:bg-slate-100 border border-slate-200/60">Other Gear</button>
-        </div>
-
-        <!-- Product Grid Dynamic Display Node -->
+        <!-- Target Injection Node for JavaScript Generator Grid -->
         <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- JavaScript populates items dynamically inside this sandbox container -->
+            <!-- Rendered by JavaScript dynamically -->
         </div>
     </section>
 
-    <!-- Feature Pillars Section -->
-    <section id="features" class="bg-indigo-900 text-white py-20">
+    <!-- Why Choose K2 Feature Pillars -->
+    <section id="features" class="bg-indigo-950 text-white py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-start">
-                    <div class="bg-indigo-500/20 p-3 rounded-xl text-indigo-400 mb-5">
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl">
+                    <div class="bg-indigo-500/20 p-3 rounded-xl text-indigo-400 w-fit mb-5">
                         <i data-lucide="shield-check" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Original Warranties</h3>
-                    <p class="text-indigo-200/80 text-sm leading-relaxed">Every purchase at K2 is backed by official brand protection, guaranteeing durability.</p>
+                    <h3 class="text-xl font-bold mb-2">Verified Authenticity</h3>
+                    <p class="text-indigo-200/80 text-sm leading-relaxed">No generic copy counterfeits. We hand-test case fittings and voltage safety standard parameters strictly.</p>
                 </div>
-                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-start">
-                    <div class="bg-indigo-500/20 p-3 rounded-xl text-indigo-400 mb-5">
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl">
+                    <div class="bg-indigo-500/20 p-3 rounded-xl text-indigo-400 w-fit mb-5">
                         <i data-lucide="zap" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">High Efficiency Ratings</h3>
-                    <p class="text-indigo-200/80 text-sm leading-relaxed">Our advanced charging components leverage GaN tech for cooling and lightning power delivery.</p>
+                    <h3 class="text-xl font-bold mb-2">Modern Charging Labs</h3>
+                    <p class="text-indigo-200/80 text-sm leading-relaxed">GaN core architectures that power up your phone device while carefully managing safe device temperatures.</p>
                 </div>
-                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col items-start">
-                    <div class="bg-indigo-500/20 p-3 rounded-xl text-indigo-400 mb-5">
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl">
+                    <div class="bg-indigo-500/20 p-3 rounded-xl text-indigo-400 w-fit mb-5">
                         <i data-lucide="truck" class="w-6 h-6"></i>
                     </div>
+                    <h3 class="text-xl font-bold mb-2">Fast Kampala Delivery</h3>
