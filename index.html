@@ -1,113 +1,573 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>K2 Phone World | Phones & Accessories</title>
-  <meta name="description" content="Shop smartphones and phone accessories at K2 Phone World.">
+
+  <title>K2 Phone World | Your Mobile World</title>
+
+  <meta name="description" content="Shop smartphones, phone accessories and gadgets at K2 Phone World Uganda.">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header class="topbar">
-  <div class="logo">
-    <span>K2</span>
-    <div>
-      <h2>PHONE WORLD</h2>
-      <small>Your Phone, Our Passion</small>
+
+  <div class="header-main">
+
+    <a href="#home" class="logo">
+      <span class="logo-symbol">K2</span>
+
+      <div class="logo-text">
+        <h2>PHONE WORLD</h2>
+        <small>Your Mobile World</small>
+      </div>
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <div class="search-box">
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Search for phones, brands, accessories..."
+      >
+      <button onclick="searchProducts()">⌕</button>
     </div>
+
+    <button class="cart-button" onclick="openCart()">
+      🛒
+      <span id="cartCount">0</span>
+      <small>Cart</small>
+    </button>
+
+    <a class="header-whatsapp"
+       href="https://wa.me/256774579357"
+       target="_blank">
+       <span>◉</span>
+       <small>Chat on WhatsApp</small>
+    </a>
+
   </div>
 
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
   <nav id="navigation">
-    <a href="#home">Home</a>
+
+    <a href="#home" class="active">Home</a>
     <a href="#phones">Phones</a>
     <a href="#accessories">Accessories</a>
-    <a href="#about">About</a>
+    <a href="#brands">Brands</a>
+    <a href="#about">About Us</a>
     <a href="#contact">Contact</a>
-    <button onclick="showAdminLogin()">Admin</button>
+
   </nav>
+
 </header>
+
 
 <main id="home">
 
-  <section class="hero">
-    <p class="tagline">WELCOME TO K2 PHONE WORLD</p>
-    <h1>ALL YOUR PHONE NEEDS IN ONE PLACE!</h1>
-    <p>
-      Discover quality smartphones, phone covers,
-      screen protectors and accessories at great prices.
+<!-- ================= HERO BANNER ================= -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <p class="hero-tag">LATEST SMARTPHONES & ACCESSORIES</p>
+
+    <h1>
+      <span>K2</span> PHONE WORLD
+    </h1>
+
+    <h3>
+      Top Brands
+      <span>•</span>
+      Best Prices
+      <span>•</span>
+      Reliable Service
+    </h3>
+
+    <p class="hero-description">
+      Discover the latest smartphones, accessories and
+      mobile gadgets from all major brands. Quality products,
+      affordable prices and excellent customer service.
     </p>
-    <a href="#phones" class="main-btn">Explore Products</a>
-  </section>
 
-  <section class="section" id="phones">
-    <h2>Our Phones</h2>
-    <div id="phoneProducts" class="product-grid">
-      <p>Loading phones...</p>
+    <a href="#phones" class="main-btn">
+      Shop Now <span>❯</span>
+    </a>
+
+  </div>
+
+  <div class="hero-image">
+
+    <div class="hero-phone-placeholder">
+      <span>📱</span>
+      <span>📱</span>
+      <span>📱</span>
     </div>
-  </section>
 
-  <section class="section" id="accessories">
-    <h2>Phone Accessories</h2>
-    <div id="accessoryProducts" class="product-grid">
-      <p>Loading accessories...</p>
+    <div class="hero-slogan">
+      Your<br>
+      Trusted<br>
+      Phone Shop<br>
+      in Uganda
     </div>
-  </section>
 
-  <section class="section" id="gallery">
-    <h2>Our Photos & Videos</h2>
-    <div id="mediaGallery" class="product-grid">
-      <p>Loading gallery...</p>
+  </div>
+
+</section>
+
+
+<!-- ================= PHONE BRANDS ================= -->
+
+<section class="section brands-section" id="brands">
+
+  <div class="section-heading">
+
+    <div>
+      <h2>ALL PHONE <span>BRANDS</span></h2>
+      <p>We stock all major phone brands. Choose your favourite.</p>
     </div>
-  </section>
 
-  <section class="section" id="about">
-    <h2>About K2 Phone World</h2>
+    <a href="#phones">View All Brands →</a>
+
+  </div>
+
+  <div class="brand-grid">
+
+    <div class="brand-card">
+      <span class="brand-apple">●</span>
+      <strong>Apple</strong>
+    </div>
+
+    <div class="brand-card">
+      <span class="samsung">SAMSUNG</span>
+      <strong>Samsung</strong>
+    </div>
+
+    <div class="brand-card">
+      <span class="tecno">TECNO</span>
+      <strong>Tecno</strong>
+    </div>
+
+    <div class="brand-card">
+      <span class="infinix">Infinix</span>
+      <strong>Infinix</strong>
+    </div>
+
+    <div class="brand-card">
+      <span class="itel">itel</span>
+      <strong>itel</strong>
+    </div>
+
+    <div class="brand-card">
+      <span class="redmi">Redmi</span>
+      <strong>Redmi</strong>
+    </div>
+
+    <div class="brand-card">
+      <span class="xiaomi">mi</span>
+      <strong>Xiaomi</strong>
+    </div>
+
+    <div class="brand-card">
+      <span class="oppo">oppo</span>
+      <strong>OPPO</strong>
+    </div>
+
+    <div class="brand-card">
+      <span class="vivo">vivo</span>
+      <strong>Vivo</strong>
+    </div>
+
+    <div class="brand-card">
+      <span class="huawei">HUAWEI</span>
+      <strong>Huawei</strong>
+    </div>
+
+    <div class="brand-card">
+      <span class="nokia">NOKIA</span>
+      <strong>Nokia</strong>
+    </div>
+
+    <div class="brand-card">
+      <span class="google">G</span>
+      <strong>Google Pixel</strong>
+    </div>
+
+    <div class="brand-card">
+      <span class="oneplus">1+</span>
+      <strong>OnePlus</strong>
+    </div>
+
+    <div class="brand-card">
+      <span class="realme">realme</span>
+      <strong>realme</strong>
+    </div>
+
+    <div class="brand-card">
+      <span class="motorola">M</span>
+      <strong>Motorola</strong>
+    </div>
+
+    <div class="brand-card">
+      <span class="sony">SONY</span>
+      <strong>SONY</strong>
+    </div>
+
+    <div class="brand-card">
+      <span class="honor">HONOR</span>
+      <strong>HONOR</strong>
+    </div>
+
+    <div class="brand-card">
+      <span class="zte">ZTE</span>
+      <strong>ZTE</strong>
+    </div>
+
+    <div class="brand-card">
+      <span class="nothing">NOTHING</span>
+      <strong>NOTHING</strong>
+    </div>
+
+    <div class="brand-card">
+      <span class="asus">ASUS</span>
+      <strong>ASUS</strong>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SHOP BY CATEGORY ================= -->
+
+<section class="section category-section" id="categories">
+
+  <div class="section-heading">
+
+    <div>
+      <h2>SHOP BY <span>CATEGORY</span></h2>
+      <p>Everything your smartphone needs.</p>
+    </div>
+
+    <a href="#accessories">View All Categories →</a>
+
+  </div>
+
+  <div class="category-grid">
+
+    <a href="#phones" class="category-card">
+      <div class="category-image">📱</div>
+      <strong>Smartphones</strong>
+    </a>
+
+    <a href="#accessories" class="category-card">
+      <div class="category-image">📱</div>
+      <strong>Phone Cases</strong>
+    </a>
+
+    <a href="#accessories" class="category-card">
+      <div class="category-image">🛡️</div>
+      <strong>Screen Guards</strong>
+    </a>
+
+    <a href="#accessories" class="category-card">
+      <div class="category-image">🔌</div>
+      <strong>Chargers & Cables</strong>
+    </a>
+
+    <a href="#accessories" class="category-card">
+      <div class="category-image">🎧</div>
+      <strong>Earphones & Headphones</strong>
+    </a>
+
+    <a href="#accessories" class="category-card">
+      <div class="category-image">🔋</div>
+      <strong>Power Banks</strong>
+    </a>
+
+    <a href="#accessories" class="category-card">
+      <div class="category-image">⌚</div>
+      <strong>Smartwatches</strong>
+    </a>
+
+    <a href="#accessories" class="category-card">
+      <div class="category-image">🎮</div>
+      <strong>Accessories</strong>
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SMARTPHONES ================= -->
+
+<section class="section products-section" id="phones">
+
+  <div class="section-heading">
+
+    <div>
+      <h2>SMART<span>PHONES</span></h2>
+      <p>Latest models from all brands.</p>
+    </div>
+
+    <a href="#phones">View All Phones →</a>
+
+  </div>
+
+  <div id="phoneProducts" class="product-grid">
+
+    <p>Loading phones...</p>
+
+  </div>
+
+</section>
+
+
+<!-- ================= POPULAR ACCESSORIES ================= -->
+
+<section class="section products-section" id="accessories">
+
+  <div class="section-heading">
+
+    <div>
+      <h2>POPULAR <span>ACCESSORIES</span></h2>
+      <p>High quality accessories for better performance.</p>
+    </div>
+
+    <a href="#accessories">View All Accessories →</a>
+
+  </div>
+
+  <div id="accessoryProducts" class="product-grid">
+
+    <p>Loading accessories...</p>
+
+  </div>
+
+</section>
+
+
+<!-- ================= GALLERY DATA CONTAINER ================= -->
+
+<div id="mediaGallery" hidden></div>
+
+
+<!-- ================= BENEFITS ================= -->
+
+<section class="benefits-section">
+
+  <div class="benefit">
+    <span>🛡️</span>
+    <div>
+      <strong>Original Products</strong>
+      <small>100% genuine</small>
+    </div>
+  </div>
+
+  <div class="benefit">
+    <span>🚚</span>
+    <div>
+      <strong>Fast Delivery</strong>
+      <small>Across Uganda</small>
+    </div>
+  </div>
+
+  <div class="benefit">
+    <span>💳</span>
+    <div>
+      <strong>Secure Payment</strong>
+      <small>Mobile money & bank</small>
+    </div>
+  </div>
+
+  <div class="benefit">
+    <span>🎧</span>
+    <div>
+      <strong>24/7 Support</strong>
+      <small>Always here for you</small>
+    </div>
+  </div>
+
+  <div class="benefit">
+    <span>⭐</span>
+    <div>
+      <strong>Best Prices</strong>
+      <small>Quality you can trust</small>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ================= ABOUT & CONTACT ================= -->
+
+<section class="footer-information">
+
+  <div class="shop-image">
+    <div class="shop-image-placeholder">
+      K2 PHONE WORLD
+    </div>
+  </div>
+
+  <div class="about-content" id="about">
+
+    <h2>ABOUT <span>K2 PHONE WORLD</span></h2>
+
     <p>
-      K2 Phone World is committed to providing quality
-      smartphones and accessories at affordable prices.
+      K2 Phone World is your trusted destination for
+      smartphones, phone accessories and mobile gadgets
+      in Uganda. We offer quality products, affordable
+      prices and excellent customer service.
       Your satisfaction is our priority.
     </p>
-  </section>
 
-  <section class="section" id="contact">
-    <h2>Contact Us</h2>
-    <p>WhatsApp: 0774579357</p>
-    <p>Location: Kampala Road, Uganda</p>
-    <a class="main-btn"
-       href="https://wa.me/256774579357">
-       Chat With Us on WhatsApp
+    <ul>
+      <li>✓ Wide range of phones & accessories</li>
+      <li>✓ Genuine & high quality products</li>
+      <li>✓ Trusted by our customers</li>
+      <li>✓ Fast and reliable service</li>
+    </ul>
+
+  </div>
+
+  <div class="contact-content" id="contact">
+
+    <h2>CONTACT US</h2>
+
+    <p>☎ 0744806220</p>
+    <p>☎ 0774579357</p>
+    <p>📍 Kampala, Uganda</p>
+    <p>◷ Mon - Sat: 8:00 AM - 8:00 PM</p>
+    <p>Sun: 10:00 AM - 6:00 PM</p>
+
+    <a href="https://wa.me/256774579357"
+       target="_blank"
+       class="whatsapp-btn">
+       ◉ Chat on WhatsApp
     </a>
-  </section>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CART ================= -->
+
+<section id="cartSection" class="cart-section" style="display:none">
+
+  <div class="cart-box">
+
+    <button onclick="closeCart()" class="close-btn">✕</button>
+
+    <h2>Your Shopping Cart</h2>
+
+    <div id="cartItems">
+      Your cart is empty.
+    </div>
+
+    <h3 id="cartTotal">Total: UGX 0</h3>
+
+    <button onclick="checkoutWhatsApp()" class="main-btn">
+      Order on WhatsApp
+    </button>
+
+  </div>
+
+</section>
+
 
 </main>
 
-<!-- ADMIN LOGIN -->
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="main-footer">
+
+  <div class="footer-top">
+
+    <a href="#home" class="footer-logo">
+      K2 <span>PHONE WORLD</span>
+    </a>
+
+    <div class="footer-links">
+      <a href="#home">Home</a> |
+      <a href="#phones">Phones</a> |
+      <a href="#accessories">Accessories</a> |
+      <a href="#brands">Brands</a> |
+      <a href="#about">About Us</a> |
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="social-links">
+      <a href="#">f</a>
+      <a href="#">♪</a>
+      <a href="#">▶</a>
+      <a href="#">◎</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+
+    <p>© 2026 K2 Phone World. All Rights Reserved.</p>
+
+    <span>Quality Phones. Quality Accessories. Quality Service.</span>
+
+  </div>
+
+</footer>
+
+
+<!-- ================= ADMIN LOGIN ================= -->
+
 <section id="adminLogin" class="admin-section" style="display:none">
+
   <div class="admin-box">
+
     <button onclick="closeAdmin()" class="close-btn">✕</button>
+
     <h2>Admin Login</h2>
     <p>Authorized access only</p>
 
     <form id="adminLoginForm">
-      <input id="adminEmail" type="email"
-             placeholder="Admin email" required>
 
-      <input id="adminPassword" type="password"
-             placeholder="Password" required>
+      <input
+        id="adminEmail"
+        type="email"
+        placeholder="Admin email"
+        required
+      >
+
+      <input
+        id="adminPassword"
+        type="password"
+        placeholder="Password"
+        required
+      >
 
       <button type="submit">Login</button>
+
     </form>
+
   </div>
+
 </section>
 
-<!-- ADMIN DASHBOARD -->
+
+<!-- ================= ADMIN DASHBOARD ================= -->
+
 <section id="adminDashboard" class="admin-section" style="display:none">
 
   <div class="admin-box dashboard-box">
+
     <h2>K2 Admin Dashboard</h2>
 
     <button onclick="showAdminTab('addProduct')">
@@ -130,69 +590,133 @@
       Logout
     </button>
 
+
+    <!-- ADD PRODUCT -->
+
     <div id="addProduct" class="admin-tab">
+
       <h3>Add New Product</h3>
 
       <form id="productForm">
-        <input id="productTitle" placeholder="Product name" required>
+
+        <input
+          id="productTitle"
+          placeholder="Product name"
+          required
+        >
 
         <select id="productCategory" required>
+
           <option value="phone">Phone</option>
           <option value="accessory">Accessory</option>
+
         </select>
 
-        <input id="productPrice" type="number"
-               placeholder="Price in UGX" required>
+        <input
+          id="productPrice"
+          type="number"
+          placeholder="Price in UGX"
+          required
+        >
 
-        <textarea id="productDescription"
-                  placeholder="Product description"></textarea>
+        <textarea
+          id="productDescription"
+          placeholder="Product description"
+        ></textarea>
 
-        <input id="productImage" type="file"
-               accept="image/*" required>
+        <input
+          id="productImage"
+          type="file"
+          accept="image/*"
+          required
+        >
 
         <button type="submit">Save Product</button>
+
       </form>
+
     </div>
+
+
+    <!-- MANAGE PRODUCTS -->
 
     <div id="manageProducts" class="admin-tab" style="display:none">
+
       <h3>Manage Products</h3>
+
       <div id="adminProductList"></div>
+
     </div>
 
+
+    <!-- MEDIA UPLOAD -->
+
     <div id="mediaUpload" class="admin-tab" style="display:none">
+
       <h3>Upload Photos & Videos</h3>
 
       <form id="mediaForm">
+
         <input id="mediaTitle" placeholder="Media title">
-        <input id="mediaFile" type="file"
-               accept="image/*,video/*" required>
+
+        <input
+          id="mediaFile"
+          type="file"
+          accept="image/*,video/*"
+          required
+        >
+
         <button type="submit">Upload Media</button>
+
       </form>
+
     </div>
 
+
+    <!-- BUSINESS SETTINGS -->
+
     <div id="businessSettings" class="admin-tab" style="display:none">
+
       <h3>Business Settings</h3>
 
       <form id="settingsForm">
-        <input id="businessName" placeholder="Business name">
-        <input id="businessPhone" placeholder="Phone number">
-        <input id="businessAddress" placeholder="Business location">
-        <input id="businessWhatsApp" placeholder="WhatsApp number"
-               value="0774579357">
+
+        <input
+          id="businessName"
+          placeholder="Business name"
+        >
+
+        <input
+          id="businessPhone"
+          placeholder="Phone number"
+        >
+
+        <input
+          id="businessAddress"
+          placeholder="Business location"
+        >
+
+        <input
+          id="businessWhatsApp"
+          placeholder="WhatsApp number"
+          value="0774579357"
+        >
+
         <button type="submit">Save Settings</button>
+
       </form>
+
     </div>
 
   </div>
+
 </section>
 
-<footer>
-  <h3>K2 PHONE WORLD</h3>
-  <p>All Your Phone Needs In One Place!</p>
-  <p>© 2026 K2 Phone World. All Rights Reserved.</p>
-</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script src="app.js"></script>
 
 </body>
