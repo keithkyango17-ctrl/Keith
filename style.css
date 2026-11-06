@@ -1176,4 +1176,26 @@ button:hover {
   align-items: center;
 }
 
+.burner-banner {
+  width: 100%;
+  max-width: 550px;
+  height: 350px;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+}
+
+.hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .burner-banner {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
   
