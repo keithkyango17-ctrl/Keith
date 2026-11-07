@@ -221,6 +221,7 @@ async function loadProducts() {
 // DISPLAY PRODUCTS
 // =====================================
 
+
 function displayProducts(products, containerId) {
 
   const container = document.getElementById(containerId);
@@ -247,6 +248,12 @@ function displayProducts(products, containerId) {
 
         <h3>${escapeHTML(product.title)}</h3>
 
+        ${product.brand ? `
+          <p class="product-brand">
+            Brand: ${escapeHTML(product.brand)}
+          </p>
+        ` : ""}
+
         <p>${escapeHTML(product.description || "")}</p>
 
         <p class="product-price">
@@ -263,6 +270,7 @@ function displayProducts(products, containerId) {
     `;
   }).join("");
 }
+
 // =====================================
 // ADD PRODUCT
 // =====================================
@@ -376,7 +384,17 @@ async function loadAdminProducts() {
 
   container.innerHTML = data.map(product => `
     <div class="product-card">
+
       <h3>${escapeHTML(product.title)}</h3>
+
+      <p>Category: ${escapeHTML(product.category)}</p>
+
+      ${product.brand ? `
+        <p>Brand: ${escapeHTML(product.brand)}</p>
+      ` : ""}
+
+      <p>${escapeHTML(product.description || "")}</p>
+
       <p>${formatPrice(product.price_ugx)}</p>
 
       <button onclick="editProduct(${product.id})">
@@ -386,9 +404,11 @@ async function loadAdminProducts() {
       <button onclick="deleteProduct(${product.id})">
         Delete
       </button>
+
     </div>
   `).join("");
 }
+
 
 // =====================================
 // EDIT PRODUCT
