@@ -412,54 +412,102 @@ async function loadAdminProducts() {
 
 // =====================================
 // EDIT PRODUCT
-// =====================================
+// =============================
 
 async function editProduct(id) {
 
-  if (!currentUser) return;
+  if (!currentUser) {
+    alert("Please log in as admin.");
+    return;
+  }
+
+  const productId = String(id).trim();
 
   const { data: product, error } = await supabaseClient
     .from("k2_items")
     .select("*")
-    .eq("id", id)
-    .single();
+    .eq("id", productId)
+    .maybeSingle();
 
-  if (error || !product) {
-    alert("Product not found.");
+  if (error) {
+    alert("Product lookup failed: " + error.message);
+    console.error("Edit lookup error:", error);
     return;
   }
 
-  const title = prompt("Enter product name:", product.title);
+  if (!product) {
+    alert("No product found for ID: " + productId);
+    return;
+  }
+
+  const title = prompt("Product name:", product.title);
   if (title === null) return;
 
-  const price = prompt("Enter new price in UGX:", product.price_ugx);
+  const category = prompt(
+    "Category (phone or accessory):",
+    product.category
+  );
+  if (category === null) return;
+
+  const cleanCategory = category.trim().toLowerCase();
+
+  if (!["phone", "accessory"].includes(cleanCategory)) {
+    alert("Enter phone or accessory.");
+    return;
+  }
+
+  let brand = product.brand || "";
+
+  if (cleanCategory === "phone") {
+    brand = prompt("Phone brand:", brand);
+    if (brand === null) return;
+
+    if (!brand.trim()) {
+      alert("Enter a phone brand.");
+      return;
+    }
+  } else {
+    brand = "";
+  }
+
+  const price = prompt("Price in UGX:", product.price_ugx);
   if (price === null) return;
 
   const newPrice = Number(price);
 
   if (!title.trim() || !Number.isFinite(newPrice) || newPrice <= 0) {
-    alert("Enter a valid product name and price.");
+    alert("Enter a valid name and price.");
     return;
   }
+
+  const description = prompt(
+    "Product description:",
+    product.description || ""
+  );
+  if (description === null) return;
 
   const { error: updateError } = await supabaseClient
     .from("k2_items")
     .update({
       title: title.trim(),
-      price_ugx: newPrice
+      category: cleanCategory,
+      brand: brand.trim() || null,
+      price_ugx: newPrice,
+      description: description.trim()
     })
-    .eq("id", id);
+    .eq("id", productId);
 
   if (updateError) {
     alert("Update failed: " + updateError.message);
     return;
   }
 
-  alert("Product updated!");
+  alert("Product updated successfully!");
 
   await loadProducts();
   await loadAdminProducts();
 }
+
 
 // =====================================
 // DELETE PRODUCT
