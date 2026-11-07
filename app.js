@@ -263,7 +263,6 @@ function displayProducts(products, containerId) {
     `;
   }).join("");
 }
-
 // =====================================
 // ADD PRODUCT
 // =====================================
@@ -280,17 +279,27 @@ document.getElementById("productForm")
 
     const title = document.getElementById("productTitle").value.trim();
     const category = document.getElementById("productCategory").value;
+    const brandElement = document.getElementById("productBrand");
+    const brand = category === "phone" && brandElement
+      ? brandElement.value
+      : null;
+
     const price = Number(document.getElementById("productPrice").value);
     const description = document.getElementById("productDescription").value.trim();
     const file = document.getElementById("productImage").files[0];
 
-    if (!file || !title || !price || price <= 0) {
-      alert("Please enter a valid name, price and product image.");
+    if (!title || !price || price <= 0 || !file) {
+      alert("Enter a valid product name, price and image.");
+      return;
+    }
+
+    if (category === "phone" && !brand) {
+      alert("Please select a phone brand.");
       return;
     }
 
     if (!file.type.startsWith("image/")) {
-      alert("Please select an image.");
+      alert("Please select a valid image.");
       return;
     }
 
@@ -312,6 +321,8 @@ document.getElementById("productForm")
         title: title,
         kind: "product",
         category: category,
+        brand: brand,
+        description: description,
         price_ugx: price,
         file_path: path,
         file_type: file.type
@@ -326,6 +337,12 @@ document.getElementById("productForm")
     alert("Product added successfully!");
 
     this.reset();
+
+    const preview = document.getElementById("productImagePreview");
+    if (preview) preview.style.display = "none";
+
+    const brandSelect = document.getElementById("productBrand");
+    if (brandSelect) brandSelect.remove();
 
     await loadProducts();
     await loadAdminProducts();
