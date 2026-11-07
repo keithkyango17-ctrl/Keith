@@ -465,46 +465,46 @@ async function editProduct(id) {
 // DELETE PRODUCT
 // =====================================
 
+
 async function deleteProduct(id) {
 
-  if (!currentUser) return;
+  if (!currentUser) {
+    alert("Please log in as admin.");
+    return;
+  }
 
   if (!confirm("Are you sure you want to delete this product?")) {
     return;
   }
 
-  const { data: product, error: readError } = await supabaseClient
-    .from("k2_items")
-    .select("file_path")
-    .eq("id", id)
-    .single();
-
-  if (readError) {
-    alert("Could not find product.");
-    return;
-  }
-
-  const { error } = await supabaseClient
+  const { data: deletedProduct, error } = await supabaseClient
     .from("k2_items")
     .delete()
-    .eq("id", id);
+    .eq("id", id)
+    .select("file_path")
+    .maybeSingle();
 
   if (error) {
     alert("Delete failed: " + error.message);
     return;
   }
 
-  if (product.file_path) {
+  if (!deletedProduct) {
+    alert("No product was deleted. Check the product ID and admin permissions.");
+    return;
+  }
+
+  if (deletedProduct.file_path) {
     const { error: storageError } = await supabaseClient.storage
       .from(BUCKET)
-      .remove([product.file_path]);
+      .remove([deletedProduct.file_path]);
 
     if (storageError) {
       console.error("Image cleanup failed:", storageError);
     }
   }
 
-  alert("Product deleted.");
+  alert("Product deleted successfully!");
 
   await loadProducts();
   await loadAdminProducts();
