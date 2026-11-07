@@ -397,13 +397,13 @@ async function loadAdminProducts() {
 
       <p>${formatPrice(product.price_ugx)}</p>
 
-      <button onclick="editProduct(${product.id})">
-        Edit
-      </button>
+      <button onclick="editProduct('${product.id}')">
+  Edit
+</button>
 
-      <button onclick="deleteProduct(${product.id})">
-        Delete
-      </button>
+<button onclick="deleteProduct('${product.id}')">
+  Delete
+</button>
 
     </div>
   `).join("");
