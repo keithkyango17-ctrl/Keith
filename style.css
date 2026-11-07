@@ -1197,5 +1197,17 @@ button:hover {
     height: auto;
   }
 }
-
+.admin-btn {
+  display: inline-block !important;
+  background: #1677ff !important;
+  color: #ffffff !important;
+  padding: 10px 18px !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1000;
+}
   
